@@ -1,0 +1,32 @@
+<div class="row justify-content-md-center">
+  <div class="col-6">
+    <div class="text-center mt-40">
+      <h1>
+        Checkout — Stripe Press
+      </h1>
+      <h5 class="text-secondary">
+        {{title}}
+      </h5>
+      <hr class="mt-40">
+      <div class="mt-20 text-info">
+        Total due: $<span class="amount" data-amount="{{amount}}"></span>
+      </div>
+    </div>
+    <div class="card box-shadow mt-40">
+      <div class="card-body">
+        <form name="payment-form">
+          <div>
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="you@email.com">
+          </div>
+          <div class="mt-20 text-center text-secondary border-placeholder">
+            Add Stripe Element here!
+          </div>
+          <div class="mt-20">
+            <button type="submit" class="btn btn-lg btn-block btn-primary">Pay $<span class="amount" data-amount="{{amount}}"></span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
