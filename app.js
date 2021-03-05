@@ -39,7 +39,8 @@ app.get('/checkout', function(req, res) {
       break;     
     case '3':
       title = "Working in Public: The Making and Maintenance of Open Source"
-      amount = 2800       
+      amount = 2800  
+      break;     
     default:
       // Included in layout view, feel free to assign error
       error = "No item selected"      
