@@ -9,9 +9,9 @@ This demo is written in Javascript (Node.js) with the [Express framework](https:
 
 We're using the [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) CSS framework. It's the most popular CSS framework in the world and is pretty easy to get started with — feel free to modify styles/layout if you like. 
 
-To simplify this project, we're also not using any database here, either. Instead `server.rb` includes a simple case statement to read the GET params for `item`. 
+To simplify this project, we're also not using any database here, either. Instead `app.js` includes a simple switch statement to read the GET params for `item`. 
 
-To get started, clone the repository and run bundler to install dependencies:
+To get started, clone the repository and run npm to install dependencies:
 
 ```
 git clone https://github.com/mattmitchell6/sa-takehome-project-node && cd sa-takehome-project-node
