@@ -11,7 +11,7 @@ We're using the [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/in
 
 To simplify this project, we're also not using any database here, either. Instead `app.js` includes a simple switch statement to read the GET params for `item`. 
 
-To get started, clone the repository and run npm to install dependencies:
+To get started, clone the repository and run `npm install` to install dependencies:
 
 ```
 git clone https://github.com/mattmitchell6/sa-takehome-project-node && cd sa-takehome-project-node
