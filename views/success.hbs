@@ -5,9 +5,9 @@
       Success!
     </h1>
   </div>
-  <div class="mt-40 text-center">
-    <div class="mt-20 text-center text-secondary border-placeholder">
-      Add details about the payment here!
-    </div>
+  <div class="mt-40 text-center d-flex justify-content-center p-4">
+      <div class="alert alert-success mt-5 w-100" role="alert">
+        Payment of {{currency}} {{amount}} for <span class="font-weight-bold">"{{description}}"</span> ({{chargeId}})  was successful processed. <a target="_blank" href="{{receipt_url}}" class="alert-link">View Receipt</a>
+      </div>
   </div>
 </main>

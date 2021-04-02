@@ -14,16 +14,23 @@
     </div>
     <div class="card box-shadow mt-40">
       <div class="card-body">
-        <form name="payment-form">
+        <form action="/charge" method="post" name="payment-form" id="payment-form">
+          <div id="card-errors" class="d-none alert alert-danger my-2" role="alert"></div>
           <div>
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="you@email.com">
+            <input required type="email" class="form-control" id="email" name="email" placeholder="you@email.com">
           </div>
           <div class="mt-20 text-center text-secondary border-placeholder">
-            Add Stripe Element here!
+            <div id="card-element"></div>
           </div>
           <div class="mt-20">
-            <button type="submit" class="btn btn-lg btn-block btn-primary">Pay $<span class="amount" data-amount="{{amount}}"></span></button>
+            <button type="submit" class="btn btn-lg btn-block btn-primary" id="pay-button">Pay $<span class="amount" data-amount="{{amount}}"></span></button>
+          </div>
+          <div id="spinner" class="w-100 d-none align-items-center flex-column my-2 p-2">
+            <div class="spinner-border"  role="status">
+              <span class="sr-only"></span>
+            </div>
+            <div class="my-1 text-muted">Making Payment...</div>
           </div>
         </form>
       </div>
