@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
-const exphbs = require('express-handlebars')
+const exphbs = require('express-handlebars');
+require('dotenv').config();
 const stripe = require('stripe');
 
 var app = express();
@@ -12,6 +13,8 @@ app.engine('hbs', exphbs({
 }));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json({}));
 
 /**
  * Home route

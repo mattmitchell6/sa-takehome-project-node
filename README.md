@@ -18,6 +18,8 @@ git clone https://github.com/mattmitchell6/sa-takehome-project-node && cd sa-tak
 npm install
 ```
 
+Rename `sample.env` to `.env` and populate with your Stripe account's test API keys
+
 Then run the application locally:
 
 ```
