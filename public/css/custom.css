@@ -6,9 +6,7 @@ h1, h2, h3, h4 {
   font-weight: 300;
 }
 .box-shadow {
-  -webkit-box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-  -moz-box-shadow:    0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-  box-shadow:         0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
 }
 .mt-20 {
   margin-top: 20px;
@@ -16,9 +14,36 @@ h1, h2, h3, h4 {
 .mt-40 {
   margin-top: 40px;
 }
-.border-placeholder {
-  border-style: dashed;
-  border-width: 1px;
-  border-color: #ccc;
-  padding: 5px;
+
+/* Success page */
+.success-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #e6f6ec;
+  color: #1a9e55;
+  font-size: 32px;
+  line-height: 72px;
+}
+.receipt-cover {
+  width: 56px;
+  border-radius: 4px;
+}
+.receipt {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 16px;
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+}
+.receipt dt {
+  font-weight: 400;
+  color: #6c757d;
+}
+.receipt dd {
+  margin: 0;
+  text-align: right;
+  word-break: break-all; /* keeps the long pi_ ID from overflowing on phones */
 }

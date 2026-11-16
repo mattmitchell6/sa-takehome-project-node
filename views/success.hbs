@@ -1,13 +1,51 @@
-<main>
-  <div class="mt-40 text-center text-success">
-    <h1>
-      <i class="far fa-check-circle"></i> 
-      Success!
-    </h1>
-  </div>
-  <div class="mt-40 text-center">
-    <div class="mt-20 text-center text-secondary border-placeholder">
-      Add details about the payment here!
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    {{#if paid}}
+      <div class="text-center mt-40">
+        <div class="success-icon"><i class="fas fa-check"></i></div>
+        <h1 class="mt-20">Thank you for your order!</h1>
+        <p class="text-secondary">
+          Your payment was successful.{{#if email}} Confirmation for <strong>{{email}}</strong>.{{/if}}
+        </p>
+      </div>
+
+      <div class="card box-shadow mt-40">
+        <div class="card-body">
+          <div class="media mb-3">
+            <img src="{{book.image}}" alt="Cover of {{book.title}}" class="receipt-cover mr-3">
+            <div class="media-body">
+              <h5 class="mb-1">{{book.title}}</h5>
+              <small class="text-secondary">Qty 1</small>
+            </div>
+          </div>
+
+          <dl class="receipt">
+            <dt>Date</dt>       <dd>{{date}}</dd>
+            <dt>Total paid</dt> <dd><strong>$<span class="amount" data-amount="{{amount}}"></span></strong></dd>
+            <dt>Payment ID</dt>
+            <dd>
+              <code>{{paymentIntentId}}</code>
+              <button type="button" class="btn btn-sm btn-link p-0 ml-2"
+                      onclick="navigator.clipboard.writeText('{{paymentIntentId}}').then(() => {
+                        this.textContent = 'Copied!';
+                        setTimeout(() => { this.textContent = 'Copy'; }, 2000);
+                      })">Copy</button>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    {{else}}
+      <div class="mt-40 text-center text-secondary">
+        <h1>
+          <i class="far fa-clock"></i>
+          Payment processing
+        </h1>
+        <p class="mt-20">We'll let you know by email once your payment is confirmed.</p>
+      </div>
+    {{/if}}
+
+    <div class="mt-40 text-center">
+      <a href="/" class="btn btn-primary">Continue shopping</a>
     </div>
   </div>
-</main>
+</div>

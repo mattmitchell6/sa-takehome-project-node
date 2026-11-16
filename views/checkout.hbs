@@ -1,32 +1,45 @@
-<div class="row justify-content-md-center">
-  <div class="col-6">
-    <div class="text-center mt-40">
-      <h1>
-        Checkout — Stripe Press
-      </h1>
-      <h5 class="text-secondary">
-        {{title}}
-      </h5>
-      <hr class="mt-40">
-      <div class="mt-20 text-info">
-        Total due: $<span class="amount" data-amount="{{amount}}"></span>
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    {{#unless error}}
+      <div class="mt-20">
+        <a href="/" class="text-secondary">
+          <i class="fas fa-arrow-left"></i> Back to books
+        </a>
       </div>
-    </div>
-    <div class="card box-shadow mt-40">
-      <div class="card-body">
-        <form name="payment-form">
-          <div>
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="you@email.com">
-          </div>
-          <div class="mt-20 text-center text-secondary border-placeholder">
-            Add Stripe Element here!
-          </div>
-          <div class="mt-20">
-            <button type="submit" class="btn btn-lg btn-block btn-primary">Pay $<span class="amount" data-amount="{{amount}}"></span></button>
-          </div>
-        </form>
+      <div class="text-center mt-40">
+        <h1>
+          Checkout — {{appName}}
+        </h1>
+        <h5 class="text-secondary">
+          {{title}}
+        </h5>
+        <hr class="mt-40">
+        <div class="mt-20 text-info">
+          Total due: $<span class="amount" data-amount="{{amount}}"></span>
+        </div>
       </div>
-    </div>
+      <div class="card box-shadow mt-40">
+        <div class="card-body">
+          <form id="payment-form" name="payment-form"
+                data-publishable-key="{{publishableKey}}"
+                data-book-id="{{bookId}}">
+            <div>
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="you@email.com" required>
+            </div>
+            <div id="payment-element" class="mt-20"></div>
+            <div id="payment-message" class="mt-20 text-danger" role="alert"></div>
+            <div class="mt-20">
+              <button id="submit" type="submit" class="btn btn-lg btn-block btn-primary">Pay $<span class="amount" data-amount="{{amount}}"></span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <script src="/js/checkout.js"></script>
+    {{else}}
+      <div class="mt-40 text-center">
+        <a href="/" class="btn btn-outline-primary">Back to the store</a>
+      </div>
+    {{/unless}}
   </div>
 </div>
